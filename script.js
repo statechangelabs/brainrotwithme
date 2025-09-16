@@ -31,10 +31,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.background = 'rgba(254, 252, 249, 0.98)';
             navbar.style.boxShadow = '0 4px 6px -1px rgb(0 0 0 / 0.1)';
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.background = 'rgba(254, 252, 249, 0.95)';
             navbar.style.boxShadow = 'none';
         }
     });
@@ -273,11 +273,11 @@ const mobileMenuStyles = `
     @media (max-width: 768px) {
         .nav-menu {
             position: fixed;
-            top: 70px;
+            top: 80px;
             right: -100%;
             width: 100%;
-            height: calc(100vh - 70px);
-            background: rgba(255, 255, 255, 0.98);
+            height: calc(100vh - 80px);
+            background: rgba(254, 252, 249, 0.98);
             backdrop-filter: blur(20px);
             flex-direction: column;
             justify-content: flex-start;
