@@ -509,13 +509,44 @@ body {
     color: var(--text-secondary);
 }
 
-/* Contact Form */
-.contact-form-container {
+/* Contact CTA */
+.contact-cta {
     background: white;
     padding: 2.5rem;
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.contact-cta .cta-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.book-call-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.book-call-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
 }
 
 .form-group {
@@ -746,8 +777,18 @@ body {
         padding: 2rem;
     }
 
-    .contact-form-container {
-        padding: 2rem;
+    .contact-cta {
+        padding: 2rem 1rem;
+    }
+
+    .contact-cta .cta-text {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .book-call-btn {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
     }
 
     .floating-card {

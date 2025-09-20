@@ -63,59 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = {
-                name: document.getElementById('name').value,
-                email: document.getElementById('email').value,
-                subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
-            };
-
-            // Basic validation
-            if (!formData.name || !formData.email || !formData.subject || !formData.message) {
-                showNotification('Please fill in all fields.', 'error');
-                return;
-            }
-
-            if (!isValidEmail(formData.email)) {
-                showNotification('Please enter a valid email address.', 'error');
-                return;
-            }
-
-            // Show loading state
-            const submitButton = contactForm.querySelector('.form-submit');
-            const originalText = submitButton.textContent;
-            submitButton.textContent = 'Sending...';
-            submitButton.disabled = true;
-
-            // Simulate form submission (replace with actual email service)
-            setTimeout(() => {
-                // Create mailto link as fallback
-                const mailtoLink = `mailto:rakheja.akshay@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-                    `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-                )}`;
-
-                // Open email client
-                window.location.href = mailtoLink;
-
-                // Reset form
-                contactForm.reset();
-
-                // Reset button
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-
-                // Show success message
-                showNotification('Thank you! Your message has been prepared. Please send it from your email client.', 'success');
-            }, 1000);
-        });
-    }
+    // Cal.com floating button initialization
+    // Widget will initialize automatically via the embedded script
 
     // CTA buttons
     const ctaButtons = document.querySelectorAll('.primary-btn, .cta-button, .cta-button-large');
@@ -373,3 +322,7 @@ function displayInstagramContent() {
         window.ElfSightPlatform.init();
     }
 }
+
+// Cal.com handles booking automatically via data attributes
+// No custom function needed - Cal.com script automatically detects and handles
+// elements with data-cal-link, data-cal-namespace, and data-cal-config attributes

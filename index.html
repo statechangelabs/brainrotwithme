@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Cal element-click embed code begins -->
+    <script type="text/javascript">
+      (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "30min-brainrot", {origin:"https://app.cal.com"});
+
+      Cal.ns["30min-brainrot"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+      </script>
+    <!-- Cal element-click embed code ends -->
 </head>
 <body>
     <!-- Navigation -->
@@ -179,41 +188,33 @@
         <div class="container">
             <div class="contact-content">
                 <div class="contact-info">
-                    <h2 class="contact-title">Get In Touch</h2>
+                    <h2 class="contact-title">Book a Call</h2>
                     <p class="contact-description">
-                        Have questions? Want to collaborate? Drop us a message and we'll get back to you soon.
+                        Ready to transform your content into viral learning experiences? Let's discuss how BrainRot.WithMe can help you create engaging, educational content that actually goes viral.
                     </p>
                     <div class="contact-details">
                         <div class="contact-item">
-                            <span class="contact-icon">📧</span>
-                            <span class="contact-text">rakheja.akshay@gmail.com</span>
+                            <span class="contact-icon">🎯</span>
+                            <span class="contact-text">Discuss your content goals</span>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">⚡</span>
-                            <span class="contact-text">Usually respond within 24 hours</span>
+                            <span class="contact-icon">🧠</span>
+                            <span class="contact-text">Learn how our AI works</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🚀</span>
+                            <span class="contact-text">Get started with viral content</span>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <form class="contact-form" id="contactForm">
-                        <div class="form-group">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" id="name" name="name" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" id="email" name="email" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="form-label">Subject</label>
-                            <input type="text" id="subject" name="subject" class="form-input" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea id="message" name="message" class="form-textarea" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="form-submit">Send Message</button>
-                    </form>
+                <div class="contact-cta">
+                    <p class="cta-text">Have ideas for features? Want to share feedback? Or just curious about how it all works? Let's chat! Book a call to bounce ideas, suggest improvements for our upcoming webapp, or ask any questions you have.</p>
+                    <button class="book-call-btn"
+                            data-cal-link="akshay-rakheja/30min-brainrot"
+                            data-cal-namespace="30min-brainrot"
+                            data-cal-config='{"layout":"month_view"}'>
+                        📅 Book a 30-Minute Call
+                    </button>
                 </div>
             </div>
         </div>
