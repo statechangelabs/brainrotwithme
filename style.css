@@ -290,7 +290,13 @@ body {
 .card-4 {
     top: 45%;
     right: 25%;
-    animation-delay: 6s;
+    animation-delay: 3s;
+}
+
+.card-5 {
+    top: 75%;
+    right: 5%;
+    animation-delay: 5s;
 }
 
 .card-content {
@@ -833,15 +839,20 @@ body {
         font-size: 0.7rem;
     }
 
-    /* Keep all 4 cards on mobile with better spacing */
+    /* Keep all 5 cards on mobile with better spacing */
     .card-3 {
-        top: 55%;
+        top: 50%;
         left: 10%;
     }
 
     .card-4 {
-        top: 75%;
+        top: 65%;
         right: 15%;
+    }
+
+    .card-5 {
+        top: 80%;
+        left: 30%;
     }
 }
 
