@@ -175,8 +175,8 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 3rem;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -261,43 +261,67 @@ body {
     position: absolute;
     background: white;
     border-radius: var(--border-radius-lg);
-    padding: 1.5rem;
+    padding: 1.25rem;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
     animation: float 6s ease-in-out infinite;
+    min-width: 180px;
+    max-width: 220px;
 }
 
 .card-1 {
-    top: 20%;
-    left: 10%;
+    top: 8%;
+    left: 5%;
     animation-delay: 0s;
 }
 
 .card-2 {
-    top: 50%;
-    right: 20%;
+    top: 25%;
+    right: 8%;
     animation-delay: 2s;
 }
 
 .card-3 {
-    bottom: 20%;
-    left: 30%;
+    top: 65%;
+    left: 20%;
     animation-delay: 4s;
+}
+
+.card-4 {
+    top: 45%;
+    right: 25%;
+    animation-delay: 6s;
 }
 
 .card-content {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .card-emoji {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    flex-shrink: 0;
+}
+
+.card-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .card-text {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+.card-subtext {
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.2;
 }
 
 /* Sections */
@@ -792,57 +816,86 @@ body {
     }
 
     .floating-card {
-        padding: 1rem;
+        padding: 0.875rem;
+        min-width: 140px;
+        max-width: 160px;
     }
 
     .card-emoji {
         font-size: 1.25rem;
     }
+
+    .card-text {
+        font-size: 0.85rem;
+    }
+
+    .card-subtext {
+        font-size: 0.7rem;
+    }
+
+    /* Keep all 4 cards on mobile with better spacing */
+    .card-3 {
+        top: 55%;
+        left: 10%;
+    }
+
+    .card-4 {
+        top: 75%;
+        right: 15%;
+    }
 }
 
 /* Instagram Section */
 .instagram-section {
-    margin-top: 3rem;
-    padding: 3rem 2rem;
+    margin-top: 2rem;
+    margin-left: -5rem;
+    margin-right: -5rem;
+    padding: 2rem 4rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-radius: var(--border-radius-lg);
     box-shadow: var(--shadow-xl);
     min-height: 80vh;
-    width: 100%;
+    width: calc(100% + 10rem);
+    display: flex;
+    flex-direction: column;
 }
 
 .instagram-header {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
+    flex-shrink: 0;
 }
 
 .instagram-header h3 {
     color: white;
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .instagram-header p {
     color: rgba(255, 255, 255, 0.9);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 400;
 }
 
 .instagram-feed-container {
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--border-radius-lg);
-    padding: 2rem;
+    padding: 1rem;
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     min-height: 600px;
     width: 100%;
+    flex: 1;
+    overflow: hidden;
 }
 
 .instagram-footer {
     text-align: center;
-    margin-top: 3rem;
+    margin-top: 1.5rem;
+    flex-shrink: 0;
 }
 
 .instagram-follow-btn {
@@ -887,30 +940,68 @@ body {
     backdrop-filter: blur(10px);
 }
 
-/* Make Elfsight widget responsive and prominent */
+/* Make Elfsight widget fit container properly - optimized for 2 rows of 4 posts */
 .instagram-feed-container .elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da {
     width: 100% !important;
     min-height: 600px !important;
+    max-height: 700px !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+}
+
+/* Ensure widget content fits within container */
+.instagram-feed-container .elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da * {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Force iframe to respect container bounds - increased height for 2 rows */
+.instagram-feed-container iframe {
+    width: 100% !important;
+    height: 600px !important;
+    max-width: 100% !important;
+    border-radius: 8px !important;
+}
+
+/* Try to force Elfsight to show grid layout - wider for more posts */
+.instagram-feed-container .elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da [data-elfsight-app-layout] {
+    display: grid !important;
+    grid-template-columns: repeat(6, 1fr) !important;
+    grid-template-rows: repeat(2, 1fr) !important;
+    gap: 1rem !important;
 }
 
 @media (max-width: 768px) {
     .instagram-section {
         margin-top: 2rem;
-        padding: 2rem 1.5rem;
+        margin-left: -2rem;
+        margin-right: -2rem;
+        padding: 2rem 2rem;
+        width: calc(100% + 4rem);
         min-height: 70vh;
     }
 
     .instagram-header h3 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .instagram-header p {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
 
     .instagram-feed-container {
-        padding: 1.5rem;
+        padding: 1rem;
         min-height: 500px;
+    }
+
+    .instagram-feed-container iframe {
+        height: 500px !important;
+    }
+
+    /* Mobile: 3 columns, 4 rows for better mobile viewing */
+    .instagram-feed-container .elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da [data-elfsight-app-layout] {
+        grid-template-columns: repeat(3, 1fr) !important;
+        grid-template-rows: repeat(4, 1fr) !important;
     }
 
     .instagram-follow-btn {
