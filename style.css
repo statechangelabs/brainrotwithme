@@ -758,3 +758,122 @@ body {
         font-size: 1.25rem;
     }
 }
+
+/* Instagram Section */
+.instagram-section {
+    margin-top: 3rem;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-xl);
+    min-height: 80vh;
+    width: 100%;
+}
+
+.instagram-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.instagram-header h3 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.instagram-header p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.instagram-feed-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    padding: 2rem;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    min-height: 600px;
+    width: 100%;
+}
+
+.instagram-footer {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.instagram-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.instagram-follow-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.instagram-loading {
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    backdrop-filter: blur(20px);
+}
+
+.instagram-error {
+    text-align: center;
+    color: white;
+    background: rgba(239, 68, 68, 0.3);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    backdrop-filter: blur(10px);
+}
+
+/* Make Elfsight widget responsive and prominent */
+.instagram-feed-container .elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da {
+    width: 100% !important;
+    min-height: 600px !important;
+}
+
+@media (max-width: 768px) {
+    .instagram-section {
+        margin-top: 2rem;
+        padding: 2rem 1.5rem;
+        min-height: 70vh;
+    }
+
+    .instagram-header h3 {
+        font-size: 2rem;
+    }
+
+    .instagram-header p {
+        font-size: 1rem;
+    }
+
+    .instagram-feed-container {
+        padding: 1.5rem;
+        min-height: 500px;
+    }
+
+    .instagram-follow-btn {
+        font-size: 1rem;
+        padding: 0.875rem 1.5rem;
+    }
+}

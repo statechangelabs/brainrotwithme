@@ -346,30 +346,270 @@ function loadInstagramPosts() {
     const instagramGrid = document.getElementById('instagram-posts');
 
     // Show loading state
-    instagramGrid.innerHTML = '<div class="instagram-loading">Loading our Instagram feed...</div>';
+    instagramGrid.innerHTML = '<div class="instagram-loading">Loading our latest content...</div>';
 
-    // Load Elfsight Instagram Feed immediately
-    displayInstagramContent();
+    // Since we can't directly access Instagram API without authentication,
+    // we'll create some sample posts and provide a link to the actual Instagram
+    setTimeout(() => {
+        displayInstagramContent();
+    }, 1500);
 }
 
 function displayInstagramContent() {
     const instagramGrid = document.getElementById('instagram-posts');
 
-    // Clear loading state and add Elfsight Instagram Feed Widget
+    // Simple, effective Instagram profile showcase
     instagramGrid.innerHTML = `
-        <div class="elfsight-app-15af86e4-1f96-47a4-a6f8-f6e23b4616da" data-elfsight-app-lazy></div>
+        <div class="instagram-profile-showcase">
+            <div class="instagram-profile-card">
+                <div class="profile-header">
+                    <div class="profile-avatar">
+                        <div class="avatar-circle">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="profile-info">
+                        <h3>@brainrot.withme</h3>
+                        <p class="bio">🧠 Transform content into viral learning experiences</p>
+                        <p class="stats">📱 Copyright-free AI content • 🚀 Educational brainrot</p>
+                    </div>
+                </div>
+
+                <div class="content-preview">
+                    <h4>Latest Content Highlights</h4>
+                    <div class="content-grid">
+                        <div class="content-item">
+                            <div class="content-placeholder">
+                                <span class="emoji">📰</span>
+                                <p>News ➜ Viral Content</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-placeholder">
+                                <span class="emoji">📄</span>
+                                <p>PDF ➜ Social Posts</p>
+                            </div>
+                        </div>
+                        <div class="content-item">
+                            <div class="content-placeholder">
+                                <span class="emoji">🧠</span>
+                                <p>Learning + Entertainment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-actions">
+                    <a href="https://www.instagram.com/brainrot.withme/" target="_blank" class="follow-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        Follow @brainrot.withme
+                    </a>
+
+                    <a href="https://www.instagram.com/brainrot.withme/" target="_blank" class="view-posts-button">
+                        View All Posts →
+                    </a>
+                </div>
+            </div>
+        </div>
     `;
 
-    // Load Elfsight script if not already loaded
-    if (!document.querySelector('script[src*="elfsightcdn.com"]')) {
-        const script = document.createElement('script');
-        script.src = 'https://elfsightcdn.com/platform.js';
-        script.async = true;
-        document.head.appendChild(script);
-    }
+    // Style the Instagram profile card
+    addInstagramProfileStyles();
+}
 
-    // Force Elfsight to initialize if already loaded
-    if (window.ElfSightPlatform) {
-        window.ElfSightPlatform.init();
+function addInstagramProfileStyles() {
+    const profileStyles = `
+        .instagram-profile-showcase {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .instagram-profile-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        .profile-avatar {
+            flex-shrink: 0;
+        }
+
+        .avatar-circle {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 15px -3px rgb(0 0 0 / 0.2);
+        }
+
+        .profile-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info .bio {
+            color: #374151;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-info .stats {
+            color: #6b7280;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .content-preview {
+            margin-bottom: 2rem;
+        }
+
+        .content-preview h4 {
+            color: #374151;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .content-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+            transition: transform 0.3s ease;
+        }
+
+        .content-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .content-placeholder .emoji {
+            font-size: 1.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-placeholder p {
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .profile-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .follow-button, .view-posts-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            justify-content: center;
+            min-width: 150px;
+            font-size: 0.9rem;
+        }
+
+        .follow-button {
+            background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+            color: white;
+            border: none;
+        }
+
+        .follow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px -5px rgb(0 0 0 / 0.3);
+        }
+
+        .view-posts-button {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .view-posts-button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .instagram-profile-card {
+                padding: 2rem;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-actions {
+                flex-direction: column;
+            }
+
+            .follow-button, .view-posts-button {
+                flex: none;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .instagram-profile-card {
+                padding: 1.5rem;
+            }
+
+            .avatar-circle {
+                width: 60px;
+                height: 60px;
+            }
+
+            .profile-info h3 {
+                font-size: 1.25rem;
+            }
+        }
+    `;
+
+    // Add styles if not already added
+    if (!document.getElementById('instagram-profile-styles')) {
+        const styleSheet = document.createElement('style');
+        styleSheet.id = 'instagram-profile-styles';
+        styleSheet.textContent = profileStyles;
+        document.head.appendChild(styleSheet);
     }
 }
