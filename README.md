@@ -44,14 +44,6 @@ To deploy this website:
 3. Configure your domain to point to the index.html file
 4. Test all functionality on the live site
 
-## Browser Compatibility
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers
-
 ## Technologies Used
 
 - HTML5
